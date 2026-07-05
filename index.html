@@ -1,0 +1,1286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Livo Privacy & Legal Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cloudflare.com">
+
+
+<style>
+:root{--primary:#00AEEF;--secondary:#437298;--bg:#f4f8fb;}
+*{box-sizing:border-box} body{margin:0;font-family:Nunito,sans-serif;background:var(--bg);color:#111}
+.hero{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:40px 20px;text-align:center}
+.logo-placeholder{ width: 90px;border:3px solid #ddd;border-radius:20px;margin:auto;display:flex;align-items:center;justify-content:center}
+.topbar{padding:15px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;background:#fff}
+button{border:none;background:var(--primary);color:#fff;padding:10px 16px;border-radius:20px}
+.container{max-width:1100px;margin:auto;padding:20px}
+.search {
+  width: 400px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  display: block;
+  margin: 5px auto;   
+}
+.card{background:#fff;border-radius:16px;padding:16px;margin:12px 0;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+summary{cursor:pointer;font-weight:700;color:var(--primary);font-size:18px}
+p,li{line-height:1.8}
+footer{text-align:center;padding:30px;color:#666}
+
+
+.top-tabs{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin:20px 0;
+    flex-wrap:wrap; 
+}
+
+.tab-btn{
+    background:#e0e0e0; 
+    color:#333;
+    border:none;
+    padding:12px 25px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.tab-btn.active {
+    background: #00AEEF;
+    color: white;
+}
+
+.tab-btn:hover{
+    background:#437298;
+    color:white;
+}
+
+.highlight {
+  background: yellow;
+  color: black;
+  padding: 2px;
+  border-radius: 3px;
+}
+
+
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+
+.livo-modern-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #eef2f6;
+  padding: 80px 0 0 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.02);
+}
+
+
+.footer-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 50px;
+}
+
+
+.footer-info-section .footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.brand-icon-box {
+  background: linear-gradient(135deg, #0091ff, #0066cc);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(0, 145, 255, 0.2);
+}
+
+.footer-info-section .footer-brand h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.footer-info-section .brand-tagline {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+.footer-info-section .brand-update {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0 0 24px 0;
+}
+
+.footer-info-section .brand-update i {
+  margin-right: 4px;
+}
+
+
+.social-medias {
+  display: flex;
+  gap: 12px;
+}
+
+.social-link {
+  width: 38px;
+  height: 38px;
+  background-color: #f8fafc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 15px;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s, color 0.2s;
+}
+
+.social-link:hover {
+  background-color: #0091ff;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+
+.footer-links-section h3 {
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+.footer-links-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 25px;
+  height: 2px;
+  background-color: #0091ff;
+  border-radius: 2px;
+}
+
+.footer-links-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-section ul li {
+  margin-bottom: 14px;
+}
+
+.footer-links-section ul li a {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+
+.footer-links-section ul li a i {
+  font-size: 10px;
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.2s ease;
+  color: #0091ff;
+}
+
+
+.footer-links-section ul li a:hover {
+  color: #0091ff;
+  transform: translateX(5px);
+}
+
+.footer-links-section ul li a:hover i {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.footer-copyright-bar {
+  margin-top: 60px;
+  background-color: #f8fafc;
+  padding: 24px 0;
+  border-top: 1px solid #eef2f6;
+}
+
+.copyright-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.copyright-content p {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 0;
+  font-weight: 500;
+}
+
+
+@media (max-width: 992px) {
+  .footer-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .livo-modern-footer {
+    padding-top: 50px;
+  }
+  .footer-wrapper {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    text-align: center;
+  }
+  .footer-info-section .footer-brand {
+    justify-content: center;
+  }
+  .social-medias {
+    justify-content: center;
+  }
+  .footer-links-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .footer-links-section ul li a {
+    justify-content: center;
+  }
+  .footer-links-section ul li a i {
+    display: none;
+  }
+  .footer-links-section ul li a:hover {
+    transform: none;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="hero">
+<div><img src="images/icon.jpg" alt="" class="logo-placeholder"></div>
+<h1>Livo Privacy & Legal Center</h1>
+<p>Property & Transaction Guide</p>
+<p>Last Updated: April 2026</p>
+</div>
+
+<div class="topbar">
+<input type="text" id="searchBox" class="search" placeholder="Search policy and terms...">
+</div>
+
+
+
+<div class="container">
+
+    <div class="top-tabs">
+      <button class="tab-btn active" onclick="openTab(event, 'privacy')">Privacy Policy</button>
+      <button class="tab-btn" onclick="openTab(event, 'terms')">Terms & Conditions</button>
+    </div>
+
+    
+    <div id="privacy" class="tab-content active">
+        <div class="card">
+        <details>
+        <summary>1. Introduction</summary>
+        <p class="text">Livo App is a modern real estate platform designed to simplify the process of searching, viewing, and selecting properties. 
+The application provides users with an intuitive and efficient experience to explore houses, apartments, and land based on their preferences and requirements. 
+Our goal is to connect buyers and sellers through a secure, fast, and user-friendly environment while ensuring transparency and reliability in all property listings.
+This platform includes advanced tools such as smart search filters, interactive maps, favorites management, and real-time communication features. 
+Livo App is committed to protecting user data, ensuring account security, and continuously improving the overall experience for all users.</p>
+        <ul>
+     <li>User Consent & Agreement: By using Livo App, users agree to our terms, privacy policy, and data usage rules designed to ensure a safe and transparent platform.</li>
+
+<li>User Rights: Users have full rights to search properties, save favorites, contact sellers, and manage their personal information securely within the application.</li>
+
+<li>User Responsibilities: Users must provide accurate information, avoid fraudulent activity, and use the platform in a respectful and legal manner.</li>
+
+<li>Data Protection & Security: We apply modern security measures to protect user data, prevent unauthorized access, and ensure safe communication between users and sellers.</li>
+
+<li>Platform Purpose: Livo App is designed only for real estate purposes, including buying, selling, and renting properties such as houses, apartments, and land.</li>
+        </ul>
+        </details>
+        </div>
+          <div class="card">
+        <details>
+        <summary>2. Information Collection</summary>
+        <p class="text">
+Livo App collects certain types of information to provide a better real estate experience, improve platform functionality, and ensure secure communication between users. 
+This information is collected only for legitimate purposes such as property searching, account management, and service improvement.
+</p>
+
+<ul>
+<li>Personal Information: We may collect user details such as name, phone number, email address, and profile information during registration and account setup.</li>
+
+<li>Property & Activity Data: Information related to user interactions such as saved properties, searches, viewed listings, and favorite items may be collected to improve recommendations.</li>
+
+<li>Location Data: With user permission, location information may be used to show nearby properties and enable map-based property search features.</li>
+        </ul>
+        </details>
+        </div>
+           <div class="card">
+        <details>
+          <summary>3. Personal Information</summary>
+
+<p class="text">
+Livo App collects and processes personal information only to provide essential services and improve the user experience within the platform. 
+All personal data is handled with strict confidentiality and is not shared with unauthorized third parties.
+</p>
+
+<ul>
+<li>Account Details: We collect basic information such as full name, phone number, email address, and password during registration to create and manage user accounts.</li>
+
+<li>Profile Information: Users may optionally provide additional details such as profile picture and preferences to enhance their experience on the platform.</li>
+
+<li>Communication Data: Information shared through in-app chat, messages, or contact forms may be stored to facilitate communication between users and property owners.</li>
+
+<li>Usage Purpose: Personal information is used for authentication, security verification, property recommendations, and improving overall app performance.</li>
+</ul>
+</div>
+<div class="card">
+        <details>
+       <summary>4. Property Listings</summary>
+
+<p class="text">
+Livo App provides a platform for listing, browsing, and discovering real estate properties including houses, apartments, and land. 
+All property listings are displayed based on user preferences, location, and search filters to improve the browsing experience.
+</p>
+
+<ul>
+<li>Listing Information: Property details such as price, location, size, images, and features are provided by property owners or verified users.</li>
+
+<li>Content Accuracy: While we aim to ensure accurate listings, users are responsible for verifying property details before making any decisions.</li>
+
+<li>Search & Filtering: Users can search properties using advanced filters such as price range, number of rooms, property type, and location.</li>
+
+<li>Map Display: Properties may be displayed on an interactive map to help users easily locate and explore nearby listings.</li>
+
+<li>Platform Role: Livo App acts as an intermediary platform and does not directly own or guarantee any listed properties.</li>
+</ul>
+        </details>
+        </div>
+        <div class="card">
+        <details>
+      <summary>5. Location Services</summary>
+
+<p class="text">
+Livo App uses location services to enhance the real estate search experience by showing relevant properties based on the user's current or selected location. 
+Location data is only accessed with user permission and can be disabled at any time from device settings.
+</p>
+
+<ul>
+<li>Nearby Properties: Location services help users find properties available near their current area for faster and more relevant search results.</li>
+
+<li>Map Functionality: The app uses location data to display properties on an interactive map and allow users to explore specific regions.</li>
+
+<li>User Control: Users have full control over location permissions and can enable or disable access at any time.</li>
+
+<li>Data Usage: Location information is used only to improve search results and is not shared with unauthorized third parties.</li>
+
+<li>Privacy Protection: Livo App ensures that location data is handled securely and is not stored longer than necessary for functionality purposes.</li>
+</ul>
+        </details>
+        </div>
+
+        <div class="card">
+        <details>
+       <summary>6. Camera & Gallery Access</summary>
+
+<p class="text">
+Livo App may request access to the device camera and photo gallery to allow users to upload property images, profile pictures, and other relevant media. 
+This access is only used for core app functionality and requires user permission.
+</p>
+
+<ul>
+<li>Property Images: Users can capture or upload photos of properties to create or manage listings.</li>
+
+<li>Profile Photos: The camera and gallery may be used to set or update user profile pictures.</li>
+
+<li>User Control: Access to camera and gallery is optional and can be denied or disabled at any time through device settings.</li>
+
+<li>Data Usage: Media files are used only within the app for listing and profile purposes and are not shared without user consent.</li>
+
+<li>Privacy & Security: Livo App ensures that all uploaded media is handled securely and protected from unauthorized access.</li>
+</ul>
+        </details>
+        </div>
+
+        <div class="card">
+        <details>
+      <summary>7. Contacts Permission</summary>
+
+<p class="text">
+Livo App may request access to the user's contacts only to enhance communication features such as sharing property listings or connecting with trusted contacts. 
+This permission is optional and is used strictly for in-app functionality with user consent.
+</p>
+
+<ul>
+<li>Sharing Features: Users may share property details with contacts directly from the app.</li>
+
+<li>Faster Communication: Contacts access can help users quickly connect with saved or known individuals for property discussions.</li>
+
+
+</ul>
+        </details>
+        </div>
+
+        <div class="card">
+        <details>
+      <summary>8. Notifications</summary>
+
+<p class="text">
+Livo App uses notifications to keep users informed about important updates, property activities, and account-related alerts. 
+Notifications help improve user experience by delivering timely and relevant information directly to the device.
+</p>
+
+<ul>
+<li>New Listings: Users receive notifications when new properties matching their preferences are added.</li>
+
+<li>Price Updates: The app may notify users when there are changes in property prices or availability.</li>
+
+<li>Messages & Chats: Users are alerted when they receive new messages from property owners or buyers.</li>
+
+<li>Account Alerts: Important security updates, login alerts, or verification messages may be sent via notifications.</li>
+
+<li>User Control: Notifications can be enabled or disabled anytime through app settings or device settings.</li>
+</ul>
+        </details>
+        </div>
+
+
+              <div class="card">
+        <details>
+      <summary>9. Accessibility</summary>
+
+<p class="text">
+Livo App is committed to providing an accessible and user-friendly experience for all users, including individuals with disabilities. 
+We aim to ensure that our platform is easy to navigate, readable, and usable across different devices and user needs.
+</p>
+
+<ul>
+<li>User-Friendly Design: The app is designed with simple navigation, clear layout, and readable content for better usability.</li>
+
+<li>Device Compatibility: Livo App supports different devices and screen sizes to ensure broad accessibility.</li>
+
+<li>Continuous Improvement: We continuously work to improve accessibility features and user experience for all users.</li>
+
+<li>Inclusive Experience: The platform aims to support users with different abilities by maintaining a clean and understandable interface.</li>
+
+<li>Feedback Support: Users can report accessibility issues or suggestions to help improve the platform.</li>
+</ul>
+        </details>
+        </div>
+       
+        <div class="card">
+        <details>
+      <summary>10. Password Protection</summary>
+
+<p class="text">
+Livo App uses secure password protection mechanisms to ensure that user accounts remain safe and protected from unauthorized access. 
+Users are responsible for maintaining the confidentiality of their login credentials.
+</p>
+
+<ul>
+<li>Secure Login: All passwords are encrypted and securely stored to prevent unauthorized access.</li>
+
+<li>User Responsibility: Users must choose strong passwords and avoid sharing their login details with others.</li>
+
+<li>Password Recovery: The app provides secure methods to reset or recover forgotten passwords through verified email or phone number.</li>
+
+<li>Unauthorized Access Prevention: Multiple security checks are implemented to detect and prevent suspicious login attempts.</li>
+
+<li>Account Safety: Users are encouraged to update their passwords regularly to maintain account security.</li>
+</ul>
+        </details>
+        </div>
+
+
+        <div class="card">
+        <details>
+      <summary>11. Cloud Storage</summary>
+
+<p class="text">
+Livo App uses cloud storage services to securely store and manage user data, property listings, images, and application content. 
+This ensures fast performance, data backup, and reliable access across devices.
+</p>
+
+<ul>
+<li>Data Backup: User data and property information are securely backed up to prevent loss in case of technical issues.</li>
+
+<li>Media Storage: Images and files uploaded by users are stored in cloud servers for fast loading and accessibility.</li>
+
+<li>Scalability: Cloud infrastructure allows the app to handle a large number of users and property listings efficiently.</li>
+
+<li>Security: All data stored in the cloud is protected using encryption and industry-standard security protocols.</li>
+
+<li>Access Control: Only authorized systems and services can access stored data to ensure privacy and safety.</li>
+</ul>
+        </details>
+        </div>
+         <div class="card">
+        <details>
+      <summary>12. Device Information</summary>
+
+<p class="text">
+Livo App may collect limited device information to improve performance, enhance security, and ensure compatibility across different devices. 
+This information helps us optimize the app experience and detect technical issues.
+</p>
+
+<ul>
+<li>Device Type: Information such as device model, operating system, and hardware specifications may be collected.</li>
+
+<li>Performance Optimization: Device data helps improve app speed, stability, and overall user experience.</li>
+
+<li>Security Monitoring: Device information may be used to detect suspicious activity and prevent unauthorized access.</li>
+
+<li>Error Reporting: Technical data is used to identify and fix bugs or crashes within the application.</li>
+
+<li>No Personal Tracking: Device information is not used to personally identify users or shared with third parties without consent.</li>
+</ul>
+        </details>
+        </div>
+         <div class="card">
+        <details>
+     <summary>13. Cookies Policy</summary>
+
+<p class="text">
+Livo App may use cookies and similar technologies to improve user experience, analyze usage patterns, and enhance application performance. 
+Cookies help the app remember user preferences and provide a more personalized experience.
+</p>
+
+<ul>
+<li>Functionality Cookies: These cookies help the app remember user settings such as language, login status, and preferences.</li>
+
+<li>Performance Cookies: Used to analyze how users interact with the app to improve speed, stability, and usability.</li>
+
+<li>Personalization: Cookies may be used to provide content and property recommendations based on user behavior.</li>
+
+<li>User Control: Users can manage or disable cookies through device or browser settings at any time.</li>
+
+<li>No Sensitive Tracking: Cookies are not used to collect sensitive personal information without user consent.</li>
+</ul>
+        </details>
+        </div>
+         <div class="card">
+        <details>
+      <summary>14. Analytics</summary>
+
+<p class="text">
+Livo App uses analytics tools to understand user behavior, improve performance, and enhance overall user experience. 
+Analytics data helps us make informed decisions about features, design, and functionality of the platform.
+</p>
+
+<ul>
+<li>Usage Tracking: We analyze how users interact with the app, including pages visited, features used, and navigation patterns.</li>
+
+<li>Performance Improvement: Analytics data helps us identify bugs, crashes, and performance issues to improve stability.</li>
+
+<li>Feature Optimization: User behavior insights are used to improve existing features and develop new ones.</li>
+
+<li>No Direct Identification: Analytics data is collected in aggregated form and does not directly identify individual users.</li>
+
+<li>Privacy Protection: All analytics data is handled securely and is not sold or shared with unauthorized third parties.</li>
+</ul>
+        </details>
+        </div>
+         <div class="card">
+        <details>
+      <summary>15. Marketing Messages</summary>
+
+<p class="text">
+Livo App may send marketing messages to inform users about new features, special offers, promotions, and updates related to real estate services. 
+These messages are sent only with user consent and can be managed at any time.
+</p>
+
+<ul>
+<li>Promotions & Offers: Users may receive updates about special deals, featured properties, or new platform services.</li>
+
+<li>App Updates: Important announcements about new features or improvements may be shared through marketing notifications.</li>
+
+<li>User Consent: Marketing messages are only sent if the user has opted in to receive them.</li>
+
+<li>Opt-Out Option: Users can unsubscribe from marketing messages at any time through app settings or notification preferences.</li>
+
+<li>Respect for Privacy: Livo App ensures that marketing communications are relevant, non-intrusive, and privacy-respecting.</li>
+</ul>
+        </details>
+        </div>
+         <div class="card">
+        <details>
+      <summary>16. Google Maps Integration</summary>
+
+<p class="text">
+Livo App integrates Google Maps services to provide accurate location-based features for property searching and viewing. 
+This helps users easily explore property locations and navigate areas within the platform.
+</p>
+
+<ul>
+<li>Property Location Display: Google Maps is used to show exact or approximate locations of listed properties.</li>
+
+<li>Search Enhancement: Users can search and filter properties based on specific areas using map functionality.</li>
+
+<li>Navigation Support: The app may provide directions to property locations using map integration features.</li>
+
+<li>Data Usage: Location data shared with Google Maps is used only for map functionality and service improvement.</li>
+
+<li>Third-Party Service: Google Maps operates under its own privacy policy, and users are encouraged to review it for more details.</li>
+</ul>
+        </details>
+        </div>
+         <div class="card">
+        <details>
+      <summary>17. Firebase Services</summary>
+
+<p class="text">
+Livo App uses Google Firebase services to support core app functionality such as authentication, database management, notifications, and analytics. 
+Firebase helps ensure a secure, fast, and scalable experience for all users.
+</p>
+
+<ul>
+<li>Authentication: Firebase is used to securely manage user sign-in, registration, and password recovery.</li>
+
+<li>Database Storage: User data, property listings, and app content may be stored in Firebase databases.</li>
+
+<li>Cloud Messaging: Firebase Cloud Messaging is used to send notifications such as new listings, messages, and alerts.</li>
+
+<li>Analytics: Firebase Analytics helps us understand user behavior and improve app performance.</li>
+
+<li>Security: Firebase services follow industry-standard security practices to protect user data.</li>
+</ul>
+        </details>
+        </div>
+<div class="card">
+        <details>
+      <summary>18. Reviews & Ratings</summary>
+
+<p class="text">
+Livo App allows users to provide reviews and ratings for properties and sellers to improve transparency and trust within the platform. 
+These reviews help other users make informed decisions when searching for real estate listings.
+</p>
+
+<ul>
+<li>User Feedback: Users can rate properties based on their experience, including accuracy, condition, and overall satisfaction.</li>
+
+<li>Public Visibility: Reviews and ratings may be publicly displayed to help other users evaluate listings.</li>
+
+<li>Content Moderation: Livo App reserves the right to review, filter, or remove inappropriate, false, or misleading content.</li>
+
+<li>Authenticity: Users are encouraged to provide honest and respectful feedback based on real experiences.</li>
+
+<li>No Manipulation: Fake reviews, spam, or abusive content are strictly prohibited and may result in account restrictions.</li>
+</ul>
+        </details>
+        </div>
+        <div class="card">
+        <details>
+      <summary>19. Favorites</summary>
+
+<p class="text">
+Livo App provides a Favorites feature that allows users to save and manage preferred property listings for easy access later. 
+This feature helps users compare and track properties they are interested in.
+</p>
+
+<ul>
+<li>Save Properties: Users can add any property listing to their favorites list for future reference.</li>
+
+<li>Easy Access: Saved properties are stored in a dedicated section for quick viewing at any time.</li>
+
+<li>Manage Favorites: Users can remove or update their saved properties whenever they choose.</li>
+
+<li>Personal Use Only: Favorites data is linked to the user account and is not shared publicly.</li>
+
+<li>Data Storage: Favorite items may be stored securely to ensure synchronization across devices.</li>
+</ul>
+        </details>
+        </div>
+        <div class="card">
+        <details>
+      <summary>20. Saved Searches</summary>
+
+<p class="text">
+Livo App allows users to save their search preferences to make property browsing faster and more convenient. 
+Saved searches help users quickly access matching property listings without re-entering filters each time.
+</p>
+
+<ul>
+<li>Search Saving: Users can save customized filters such as location, price range, and property type.</li>
+
+<li>Quick Access: Saved searches can be reused to instantly view updated property results.</li>
+
+
+</ul>
+        </details>
+        </div>
+        <div class="card">
+        <details>
+      <summary>21. User Rights</summary>
+
+<p class="text">
+Livo App respects user rights and ensures that users have full control over their personal data and account activities within the platform. 
+Users are provided with transparency and control regarding how their information is collected, used, and managed.
+</p>
+
+<ul>
+<li>Access to Information: Users have the right to access their personal data stored within the application.</li>
+
+<li>Data Correction: Users can update or correct their personal information at any time.</li>
+
+<li>Data Deletion: Users may request deletion of their account and associated data, subject to applicable policies.</li>
+
+<li>Consent Control: Users can manage permissions such as location, notifications, and contacts access.</li>
+
+<li>Service Control: Users can enable or disable features such as saved searches, favorites, and marketing preferences.</li>
+</ul>
+        </details>
+        </div>
+        <div class="card">
+        <details>
+      <summary>22. Download My Data</summary>
+
+<p class="text">
+Livo App provides users with the ability to request and download a copy of their personal data stored within the platform. 
+This ensures transparency and gives users full control over their information.
+</p>
+
+<ul>
+<li>Data Access Request: Users can request a copy of their account and activity data at any time.</li>
+
+<li>Included Information: The exported data may include profile details, saved properties, search history, and account activity.</li>
+
+<li>Secure Delivery: Data is provided in a secure format to ensure privacy and protection during transfer.</li>
+
+<li>Processing Time: Requests may take a reasonable time to process depending on system load and verification requirements.</li>
+
+<li>User Verification: For security reasons, identity verification may be required before data is shared.</li>
+</ul>
+        </details>
+        </div>
+        <div class="card">
+        <details>
+      <summary>23. Delete Account</summary>
+
+<p class="text">
+Livo App provides users with the option to permanently delete their account at any time. 
+This ensures that users maintain full control over their presence and personal data within the platform.
+</p>
+
+<ul>
+<li>Account Removal: Users can request account deletion through app settings or by contacting support.</li>
+
+<li>Data Deletion: Upon deletion, personal information and associated data will be removed from active systems, subject to legal or security requirements.</li>
+
+<li>Processing Time: Account deletion requests may take a short period to process for verification and system updates.</li>
+
+<li>Irreversible Action: Once an account is deleted, it cannot be restored, and all related data may be permanently lost.</li>
+
+<li>Security Verification: To prevent unauthorized deletion, users may be required to verify their identity before processing the request.</li>
+</ul>
+        </details>
+        </div>
+        <div class="card">
+        <details>
+    <summary>24. International Users</summary>
+
+<p class="text">
+Livo App is designed to be accessible to users from different countries and regions. 
+By using the app, international users agree that their information may be processed and stored in accordance with this Privacy Policy.
+</p>
+
+<ul>
+<li>Global Access: Users from different countries can access and use Livo App services depending on availability.</li>
+
+<li>Data Processing: User data may be processed on servers located in different regions to ensure performance and reliability.</li>
+
+<li>Legal Compliance: We strive to comply with applicable data protection and privacy laws in relevant jurisdictions.</li>
+
+<li>Cross-Border Transfer: User information may be transferred across countries where our servers or service providers are located.</li>
+
+<li>User Consent: By using the app, users agree to the international transfer and processing of their data as described in this policy.</li>
+</ul>
+        </details>
+        </div>
+ 
+    </div>
+
+   
+    <div id="terms" class="tab-content">
+        <div class="card">
+        <details>
+        <summary>Terms and Conditions</summary>
+
+<p class="text">
+By using the Livo App, users agree to comply with all applicable terms, conditions, and platform rules. 
+These terms are designed to ensure a safe, fair, and reliable environment for all users engaging in real estate activities.
+</p>
+
+<ul>
+<li>Acceptable Use: Users must use the platform only for lawful real estate purposes such as searching, listing, buying, or renting properties.</li>
+
+<li>Account Responsibility: Users are responsible for maintaining the security of their accounts and all activities performed under their account.</li>
+
+<li>Prohibited Activities: Users must not engage in fraudulent behavior, fake listings, harassment, or any illegal activities on the platform.</li>
+
+<li>Content Accuracy: Users who post property listings are responsible for ensuring that all provided information is accurate and up to date.</li>
+
+<li>Platform Rights: Livo App reserves the right to suspend or terminate accounts that violate these terms or harm platform integrity.</li>
+</ul>
+        </details>
+        </div>
+
+
+
+        <div class="card">
+        <details>
+        <summary>1. Acceptance of Terms</summary>
+
+<p class="text">
+By accessing or using the Livo App, you agree to be bound by these Terms & Conditions. 
+If you do not agree, you must stop using the application immediately.
+</p>
+
+<ul>
+<li>Use of the app means full acceptance of these terms.</li>
+<li>Users must comply with all platform rules and legal requirements.</li>
+<li>Livo App may update these terms at any time.</li>
+</ul>
+        </details>
+        </div>
+
+
+        <div class="card">
+        <details>
+       <summary>2. Use of the Platform</summary>
+
+<p class="text">
+Livo App is designed for real estate activities such as searching, listing, buying, and renting properties.
+</p>
+
+<ul>
+<li>Users must use the platform only for legal real estate purposes.</li>
+<li>Misuse of the platform is strictly prohibited.</li>
+<li>Any suspicious activity may result in account suspension.</li>
+</ul>
+        </details>
+        </div>
+
+
+        <div class="card">
+        <details>
+        <summary>3. User Accounts</summary>
+
+<p class="text">
+Users are required to create an account to access certain features of the app.
+</p>
+
+<ul>
+<li>Users must provide accurate and truthful information.</li>
+<li>Each user is responsible for their account security.</li>
+<li>Sharing accounts is not allowed.</li>
+</ul>
+        </details>
+        </div>
+
+
+
+        <div class="card">
+        <details>
+       <summary>4. Property Listings</summary>
+
+<p class="text">
+All property listings are created by users or property owners and displayed on the platform.
+</p>
+
+<ul>
+<li>Users are responsible for accuracy of their listings.</li>
+<li>Livo App does not guarantee correctness of listings.</li>
+<li>Fake or misleading listings are not allowed.</li>
+</ul>
+        </details>
+        </div>
+
+
+
+        <div class="card">
+        <details>
+        <summary>5. Communication</summary>
+
+<p class="text">
+Users may communicate through chat or contact features within the app.
+</p>
+
+<ul>
+<li>All communication must remain respectful and legal.</li>
+<li>Spam or harassment is strictly prohibited.</li>
+<li>Livo App may monitor communication for safety.</li>
+</ul>
+        </details>
+        </div>
+
+
+
+        <div class="card">
+        <details>
+        <summary>6. Payments & Transactions</summary>
+
+<p class="text">
+Livo App may support real estate transactions between users.
+</p>
+
+<ul>
+<li>All financial transactions are between users, not the platform.</li>
+<li>Livo App is not responsible for payment disputes.</li>
+<li>Users must verify transactions before proceeding.</li>
+</ul>
+        </details>
+        </div>
+
+
+
+
+        <div class="card">
+        <details>
+      <summary>7. Content Responsibility</summary>
+
+<p class="text">
+Users are fully responsible for content they upload or share.
+</p>
+
+<ul>
+<li>No illegal, fake, or harmful content is allowed.</li>
+<li>Users must respect intellectual property rights.</li>
+<li>Livo App may remove inappropriate content.</li>
+</ul>
+        </details>
+        </div>
+
+
+
+
+        <div class="card">
+        <details>
+     <summary>8. Privacy & Data</summary>
+
+<p class="text">
+User data is handled according to the Privacy Policy of Livo App.
+</p>
+
+<ul>
+<li>Data is collected only for service improvement.</li>
+<li>User information is protected securely.</li>
+<li>No data is sold to third parties.</li>
+</ul>
+        </details>
+        </div>
+
+
+
+
+        <div class="card">
+        <details>
+       <summary>9. Limitation of Liability</summary>
+
+<p class="text">
+Livo App is a platform only and is not responsible for agreements between users.
+</p>
+
+<ul>
+<li>We do not guarantee property accuracy.</li>
+<li>We are not responsible for user disputes.</li>
+<li>Users use the platform at their own risk.</li>
+</ul>
+        </details>
+        </div>
+
+
+
+
+        <div class="card">
+        <details>
+       <summary>10. Account Suspension</summary>
+
+<p class="text">
+Livo App reserves the right to suspend or terminate accounts.
+</p>
+
+<ul>
+<li>Violation of rules may lead to suspension.</li>
+<li>Fraud or abuse will result in permanent ban.</li>
+<li>We may act without prior notice in serious cases.</li>
+</ul>
+        </details>
+        </div>
+
+
+
+
+        <div class="card">
+        <details>
+        <summary>11. Changes to Terms</summary>
+
+<p class="text">
+Livo App may update these Terms & Conditions at any time.
+</p>
+
+<ul>
+<li>Users will be notified of major changes.</li>
+<li>Continued use means acceptance of updates.</li>
+<li>Users should review terms regularly.</li>
+</ul>
+        </details>
+        </div>
+
+
+         <div class="card">
+        <details>
+      <summary>12. Contact Information</summary>
+
+<p class="text">
+If you have questions about these Terms & Conditions, you can contact us through support channels in the app.
+</p>
+
+<ul>
+<li>Support is available for user inquiries.</li>
+<li>Feedback is always welcome.</li>
+<li>We aim to respond in a reasonable time.</li>
+</ul>
+        </details>
+        </div>
+
+         <div class="card">
+        <details>
+       <summary>13. Prohibited Activities</summary>
+
+<p class="text">
+Users are strictly prohibited from engaging in any activity that may harm the platform, other users, or violate applicable laws while using Livo App.
+</p>
+
+<ul>
+<li>Posting fake, misleading, or fraudulent property listings.</li>
+<li>Attempting to hack, damage, or disrupt the app or its services.</li>
+<li>Harassing, abusing, or threatening other users.</li>
+<li>Using the platform for illegal or unauthorized purposes.</li>
+<li>Creating multiple accounts to manipulate system behavior.</li>
+</ul>
+        </details>
+        </div>
+
+
+         <div class="card">
+        <details>
+       <summary>14. Intellectual Property</summary>
+
+<p class="text">
+All content, design, logos, and features within the Livo App are protected by intellectual property laws and belong to the platform or its licensors.
+</p>
+
+<ul>
+<li>Users may not copy, modify, or distribute app content without permission.</li>
+<li>All branding and logos belong to Livo App.</li>
+<li>Unauthorized use of app materials is strictly prohibited.</li>
+<li>Users retain ownership of content they upload but grant Livo App usage rights.</li>
+</ul>
+        </details>
+        </div>
+
+
+         <div class="card">
+        <details>
+       <summary>15. Termination</summary>
+
+<p class="text">
+Livo App reserves the right to suspend or permanently terminate user accounts under certain conditions.
+</p>
+
+<ul>
+<li>Violation of Terms & Conditions may result in account suspension.</li>
+<li>Fraudulent or harmful activities can lead to permanent ban.</li>
+<li>Users may also request account deletion at any time.</li>
+<li>Termination may occur without prior notice in serious cases.</li>
+</ul>
+        </details>
+        </div>
+
+
+         
+    </div>
+
+
+
+    
+</div>
+
+
+<footer class="livo-modern-footer">
+  <div class="footer-wrapper">
+    
+    
+    <div class="footer-info-section">
+      <div class="footer-brand">
+        <div class="brand-image-box">
+    <img src="images/icon.jpg" alt="Livo Logo" width="50px">
+  </div>
+        <h2>Livo</h2>
+      </div>
+      <p class="brand-tagline">Property & Transaction Guide</p>
+      <p class="brand-update"><i class="fa-regular fa-clock"></i> Last Updated: April 2026</p>
+      
+    <div class="social-medias">
+
+  <a href="#" class="social-link" aria-label="X">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+  </a>
+
+ 
+  <a href="#" class="social-link" aria-label="YouTube">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+  </a>
+
+
+  <a href="#" class="social-link" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+  </a>
+
+
+  <a href="#" class="social-link" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.12 20.45H3.56V9H7.12v11.45zM5.34 7.43c-1.14 0-2.06-.92-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zm15.11 13.02h-3.56v-5.6c0-1.34-.03-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7H9.33V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29z"/></svg>
+  </a>
+</div>
+
+    </div>
+
+  
+    <div class="footer-links-section">
+      <h3>What We Do</h3>
+      <ul>
+        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Features</a></li>
+        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Blog</a></li>
+        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Security</a></li>
+        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> For Business</a></li>
+      </ul>
+    </div>
+
+ 
+    <div class="footer-links-section">
+      <h3>Who We Are</h3>
+      <ul>
+        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Careers</a></li>
+        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Brand Center</a></li>
+        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a></li>
+      </ul>
+    </div>
+
+   
+    <div class="footer-links-section">
+      <h3>Need Help?</h3>
+      <ul>
+        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Help Center</a></li>
+        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Download Apps</a></li>
+        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Security Advisories</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+</footer>
+
+<footer>
+© 2026 Livo App - Privacy Policy, Terms & Conditions, User Rights, Security Center
+</footer>
+
+
+
+
+
+
+<script>
+
+function openTab(evt, tabName) {
+   
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => content.classList.remove('active'));
+
+  
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+
+  
+    document.getElementById(tabName).classList.add('active');
+    evt.currentTarget.classList.add('active');
+}
+
+const searchBox = document.getElementById("searchBox");
+const paragraphs = document.querySelectorAll(".text");
+
+let originalTexts = [];
+
+
+paragraphs.forEach(p => {
+  originalTexts.push(p.innerHTML);
+});
+
+searchBox.addEventListener("input", function () {
+  let value = this.value.trim().toLowerCase();
+
+  paragraphs.forEach((p, index) => {
+    let text = originalTexts[index];
+
+    if (value === "") {
+      p.innerHTML = text;
+      return;
+    }
+
+    let regex = new RegExp(value, "gi");
+
+    if (text.toLowerCase().includes(value)) {
+      p.innerHTML = text.replace(regex, match =>
+        `<span class="highlight">${match}</span>`
+      );
+
+   
+      p.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      p.innerHTML = text;
+    }
+  });
+});
+</script>
+</body>
+</html>
